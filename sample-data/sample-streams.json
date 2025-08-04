@@ -1,0 +1,217 @@
+[
+  {
+    "name": "Security Camera 1",
+    "description": "Main entrance security camera",
+    "source": {
+      "type": "rtsp",
+      "url": "rtsp://192.168.1.100:554/stream1",
+      "credentials": {
+        "username": "admin",
+        "password": "password123"
+      }
+    },
+    "aiModels": [
+      {
+        "modelType": "object-detection",
+        "isActive": true,
+        "confidence": 0.8,
+        "parameters": {
+          "maxDetections": 10,
+          "nmsThreshold": 0.4
+        }
+      },
+      {
+        "modelType": "motion-detection",
+        "isActive": true,
+        "confidence": 0.6,
+        "parameters": {
+          "sensitivity": 0.5,
+          "minArea": 100
+        }
+      }
+    ],
+    "settings": {
+      "fps": 30,
+      "resolution": {
+        "width": 1920,
+        "height": 1080
+      },
+      "quality": "high",
+      "recording": {
+        "enabled": true,
+        "duration": 3600,
+        "path": "/recordings/security-cam-1"
+      }
+    },
+    "metadata": {
+      "location": "Main Entrance",
+      "tags": ["security", "entrance", "critical"],
+      "priority": "high"
+    }
+  },
+  {
+    "name": "Production Line Camera",
+    "description": "Manufacturing line quality control camera",
+    "source": {
+      "type": "rtsp",
+      "url": "rtsp://192.168.1.101:554/production",
+      "credentials": {
+        "username": "operator",
+        "password": "prod123"
+      }
+    },
+    "aiModels": [
+      {
+        "modelType": "defect-analysis",
+        "isActive": true,
+        "confidence": 0.9,
+        "parameters": {
+          "sensitivity": 0.8,
+          "threshold": 0.7,
+          "analysisMode": "comprehensive"
+        }
+      },
+      {
+        "modelType": "object-detection",
+        "isActive": true,
+        "confidence": 0.7,
+        "parameters": {
+          "maxDetections": 5,
+          "nmsThreshold": 0.3
+        }
+      }
+    ],
+    "settings": {
+      "fps": 25,
+      "resolution": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "medium",
+      "recording": {
+        "enabled": false
+      }
+    },
+    "metadata": {
+      "location": "Production Line A",
+      "tags": ["manufacturing", "quality-control", "production"],
+      "priority": "critical"
+    }
+  },
+  {
+    "name": "Parking Lot Camera",
+    "description": "Employee parking lot surveillance",
+    "source": {
+      "type": "http",
+      "url": "http://192.168.1.102:8080/video"
+    },
+    "aiModels": [
+      {
+        "modelType": "object-detection",
+        "isActive": true,
+        "confidence": 0.6,
+        "parameters": {
+          "maxDetections": 20,
+          "nmsThreshold": 0.5
+        }
+      },
+      {
+        "modelType": "face-recognition",
+        "isActive": false,
+        "confidence": 0.8,
+        "parameters": {
+          "faceSize": 64,
+          "enableTracking": true
+        }
+      }
+    ],
+    "settings": {
+      "fps": 15,
+      "resolution": {
+        "width": 1920,
+        "height": 1080
+      },
+      "quality": "medium",
+      "recording": {
+        "enabled": true,
+        "duration": 7200,
+        "path": "/recordings/parking-lot"
+      }
+    },
+    "metadata": {
+      "location": "Employee Parking Lot",
+      "tags": ["surveillance", "parking", "employee"],
+      "priority": "medium"
+    }
+  },
+  {
+    "name": "Test Video File",
+    "description": "Sample video file for testing",
+    "source": {
+      "type": "file",
+      "url": "/uploads/videos/sample-video.mp4"
+    },
+    "aiModels": [
+      {
+        "modelType": "object-detection",
+        "isActive": true,
+        "confidence": 0.7,
+        "parameters": {
+          "maxDetections": 15,
+          "nmsThreshold": 0.4
+        }
+      }
+    ],
+    "settings": {
+      "fps": 30,
+      "resolution": {
+        "width": 1920,
+        "height": 1080
+      },
+      "quality": "high",
+      "recording": {
+        "enabled": false
+      }
+    },
+    "metadata": {
+      "location": "Test Environment",
+      "tags": ["test", "sample", "development"],
+      "priority": "low"
+    }
+  },
+  {
+    "name": "Office Camera",
+    "description": "General office area monitoring",
+    "source": {
+      "type": "camera",
+      "url": "0"
+    },
+    "aiModels": [
+      {
+        "modelType": "motion-detection",
+        "isActive": true,
+        "confidence": 0.5,
+        "parameters": {
+          "sensitivity": 0.6,
+          "minArea": 200
+        }
+      }
+    ],
+    "settings": {
+      "fps": 20,
+      "resolution": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "medium",
+      "recording": {
+        "enabled": false
+      }
+    },
+    "metadata": {
+      "location": "Office Area",
+      "tags": ["office", "monitoring", "general"],
+      "priority": "low"
+    }
+  }
+] 
