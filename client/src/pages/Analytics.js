@@ -1,18 +1,17 @@
 import React from 'react';
 import { Typography, Box } from '@mui/material';
 
-function Dashboard() {
+function Analytics() {
   return (
     <Box>
       <Typography variant="h4" gutterBottom>
-        Dashboard
+        Analytics
       </Typography>
       <Typography>
-        Welcome to the Video Management System Dashboard.
+        Analytics and statistics will be displayed here.
       </Typography>
-      {/* Add summary widgets here */}
     </Box>
   );
 }
 
-export default Dashboard;
+export default Analytics;
